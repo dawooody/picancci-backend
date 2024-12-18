@@ -19,6 +19,7 @@ mongoose
 .catch((err)=>{
     console.log(err);
 });
+app.use(cors({origin:"*"}));
 
  app.use(express.json());
  app.use ("/api/auth",authRoute);
@@ -28,7 +29,6 @@ mongoose
  app.use("/api/carts", cartRoute);
  app.use("/api/orders", orderRoute);
  app.use("/api/forgetPassword", forgetpasswordRoute);
- app.use(cors());
  
 app.listen(process.env.PORT || 5000,()=>{
 console.log("backend server is running !")
