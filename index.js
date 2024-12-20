@@ -10,6 +10,8 @@ const { json } = require("body-parser");
 const cartRoute = require("./routes/Cart");
 const orderRoute = require("./routes/Order");
 const forgetpasswordRoute = require("./routes/forgetPassword");
+const profileUpdateRoute = require("./routes/profile");
+
 const cors = require('cors');
 dotenv.config();
 
@@ -29,6 +31,8 @@ app.use(cors({origin:"*"}));
  app.use("/api/carts", cartRoute);
  app.use("/api/orders", orderRoute);
  app.use("/api/forgetPassword", forgetpasswordRoute);
+ app.use("/api/profile", profileUpdateRoute);
+
  
 app.listen(process.env.PORT || 5000,()=>{
 console.log("backend server is running !")
